@@ -19,6 +19,8 @@ test_df = pd.DataFrame({
 
 
 class TestTypes:
+    """execute type related tests"""
+
     def test_prep_csv_type(self):
         t = type(data.prep_impression_data(data_csv, "csv"))
         assert t == pd.DataFrame, "data prep didn't return dataframe"
@@ -37,6 +39,8 @@ class TestTypes:
 
 
 class TestResults:
+    """blackbox testing for calculations"""
+
     def test_compute_metrics_sum(self):
         s = data.compute_metrics(test_df, "impressions").get("sum")
         assert s == 55, "sum calculation's wrong"
