@@ -3,7 +3,7 @@ import pandas as pd
 import io
 import helper
 
-logger = helper.setup_logging(__name__)
+logger = helper.setup_logging(__name__, log_level="INFO")
 
 
 class Data():
@@ -23,7 +23,7 @@ class Data():
     __name__ = "Data"
 
     def __init__(self):
-        logger.debug(f"{self.__name__} instantiated")
+        logger.debug(f"{self.__name__} class instantiated")
         pass
 
     def get_impression_stats(self, data_list: list) -> dict:
@@ -40,7 +40,7 @@ class Data():
                 dictionary containing sum and mean
         """
 
-        logger.info("evaluating data")
+        logger.info("processing impression data")
 
         dataframe = pd.DataFrame(columns=["date", "impressions"])
 
@@ -62,6 +62,7 @@ class Data():
 
         logger.debug("calculating metrics")
         self.metrics_dict = self.compute_metrics(dataframe=self.dataframe, column_name="impressions")
+        logger.info(f"calculated metrics from data are: {self.metrics_dict}")
 
         return self.metrics_dict
 
