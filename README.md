@@ -1,6 +1,6 @@
 # Coding Assignment: API
 
-## Taks
+## Task
 Given external services:
 
 Service A: https://run.mocky.io/v3/9a01a1b9-26e1-4c8a-84db-d534352e1461
