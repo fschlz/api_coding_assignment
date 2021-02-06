@@ -1,0 +1,11 @@
+*.pyc
+*.ipynb
+*.xlsx
+*.csv
+*.db
+*.pdf
+*.log
+
+.vscode
+.ipynb_checkpoints
+__pycache__
