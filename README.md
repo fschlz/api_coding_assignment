@@ -30,10 +30,9 @@ cd ./coding_assignment_api
 # conda
 conda create -n apienv python=3.8
 conda activate apienv
-conda install -f requirements.txt
-
+conda install --file requirements.txt -y
 # or with pip
-python -m pip install -r requirements.txt
+# python -m pip install -r requirements.txt
 
 # run tests
 pytest tests.py
