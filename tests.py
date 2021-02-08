@@ -1,12 +1,11 @@
 import numpy as np
 import pandas as pd
+import json
 import dataprep
 
 # setup test data
-url_dict = {
-    "https://run.mocky.io/v3/9a01a1b9-26e1-4c8a-84db-d534352e1461": "json",
-    "https://run.mocky.io/v3/ba026992-281a-42a6-8447-ae1c8a04106e": "csv"
-}
+with open("./resources/data_sources.json") as f:
+    data_list = json.load(f)
 
 data = dataprep.Data()
 
@@ -34,7 +33,7 @@ class TestTypes:
         assert t == dict, "results are not a dict"
 
     def test_data_class(self):
-        t = type(data.get_impression_stats(url_dict))
+        t = type(data.get_impression_stats(data_list))
         assert t == dict, "results are not a dict"
 
 
